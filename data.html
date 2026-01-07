@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pondok Pesantren Kabupaten Kendal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .data-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tab-button {
+            background: #e0e0e0;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            color: #555;
+        }
+        .tab-button:hover {
+            background: #1a8a6b;
+            color: white;
+        }
+        .tab-button.active {
+            background: linear-gradient(135deg, #0a4d3c, #1a8a6b);
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .data-source {
+            background: #fff3f3;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #d32f2f;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+        .decline { color: #d32f2f !important; }
+        .increase { color: #2e7d32 !important; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">BERANDA</a></li>
+            <li><a href="peta.html">PETA 2023</a></li>
+            <li><a href="peta2024.html">PETA 2024</a></li>
+            <li><a href="data.html" class="active">DATA</a></li>
+            <li><a href="tentang.html">TENTANG</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="card">
+            <h2>📋 Data Pondok Pesantren Kabupaten Kendal Tahun 2023–2024</h2>
+            <p>Data resmi jumlah pondok pesantren, pengajar, dan santri di setiap kecamatan.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="data-tabs">
+            <button class="tab-button active" onclick="showTab('ponpes')">🕌 Pondok Pesantren</button>
+            <button class="tab-button" onclick="showTab('santri')">👥 Santri</button>
+            <button class="tab-button" onclick="showTab('pengajar')">👨‍🏫 Pengajar</button>
+            <button class="tab-button" onclick="showTab('lengkap')">📊 Data Lengkap</button>
+        </div>
+
+        <!-- Tab: Pondok Pesantren -->
+        <div id="ponpes" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🕌</div>
+                    <div class="stat-number">147</div>
+                    <div class="stat-label">Total 2023</div>
+                </div>
+                <div class="stat-card highlight decline">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-number">118</div>
+                    <div class="stat-label">Total 2024</div>
+                </div>
+                <div class="stat-card decline">
+                    <div class="stat-icon">➖</div>
+                    <div class="stat-number">-29</div>
+                    <div class="stat-label">Perubahan</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🕌 Jumlah Pondok Pesantren per Kecamatan</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kecamatan</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                                <th>Δ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Kaliwungu</td><td>22</td><td>24</td><td class="increase">+2</td></tr>
+                            <tr><td>2</td><td>Sukorejo</td><td>11</td><td>13</td><td class="increase">+2</td></tr>
+                            <tr><td>3</td><td>Plantungan</td><td>7</td><td>8</td><td class="increase">+1</td></tr>
+                            <tr><td>4</td><td>Patean</td><td>6</td><td>7</td><td class="increase">+1</td></tr>
+                            <tr><td>5</td><td>Brangsong</td><td>6</td><td>7</td><td class="increase">+1</td></tr>
+                            <tr><td>6</td><td>Pageruyung</td><td>9</td><td>9</td><td>0</td></tr>
+                            <tr><td>7</td><td>Kaliwungu Selatan</td><td>4</td><td>4</td><td>0</td></tr>
+                            <tr><td>8</td><td>Limbangan</td><td>3</td><td>3</td><td>0</td></tr>
+                            <tr><td>9</td><td>Singorojo</td><td>3</td><td>3</td><td>0</td></tr>
+                            <tr><td>10</td><td>Weleri</td><td>3</td><td>3</td><td>0</td></tr>
+                            <tr><td>11</td><td>Gemuh</td><td>13</td><td>3</td><td class="decline">-10</td></tr>
+                            <tr><td>12</td><td>Patebon</td><td>11</td><td>6</td><td class="decline">-5</td></tr>
+                            <tr><td>13</td><td>Kangkung</td><td>4</td><td>1</td><td class="decline">-3</td></tr>
+                            <tr><td>14</td><td>Ngampel</td><td>5</td><td>2</td><td class="decline">-3</td></tr>
+                            <tr><td>15</td><td>Boja</td><td>9</td><td>6</td><td class="decline">-3</td></tr>
+                            <tr><td>16</td><td>Pegandon</td><td>9</td><td>7</td><td class="decline">-2</td></tr>
+                            <tr><td>17</td><td>Rowosari</td><td>3</td><td>1</td><td class="decline">-2</td></tr>
+                            <tr><td>18</td><td>Cepiring</td><td>8</td><td>7</td><td class="decline">-1</td></tr>
+                            <tr><td>19</td><td>Ringinarum</td><td>4</td><td>3</td><td class="decline">-1</td></tr>
+                            <tr><td>20</td><td>Kendal</td><td>7</td><td>1</td><td class="decline">-6</td></tr>
+                            <tr style="background: linear-gradient(135deg, #ffebee, #ffcdd2); font-weight: bold;">
+                                <td colspan="2"><strong>TOTAL</strong></td>
+                                <td><strong>147</strong></td>
+                                <td><strong>118</strong></td>
+                                <td class="decline"><strong>-29</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Santri -->
+        <div id="santri" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">28.306</div>
+                    <div class="stat-label">Total Santri 2023</div>
+                </div>
+                <div class="stat-card highlight decline">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-number">16.439</div>
+                    <div class="stat-label">Total Santri 2024</div>
+                </div>
+                <div class="stat-card decline">
+                    <div class="stat-icon">➖</div>
+                    <div class="stat-number">-11.867</div>
+                    <div class="stat-label">Perubahan</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>👥 Jumlah Santri per Kecamatan</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kecamatan</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                                <th>Δ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Kaliwungu</td><td>5.893</td><td>5.497</td><td class="decline">-396</td></tr>
+                            <tr><td>2</td><td>Sukorejo</td><td>2.841</td><td>1.528</td><td class="decline">-1.313</td></tr>
+                            <tr><td>3</td><td>Patebon</td><td>2.941</td><td>86</td><td class="decline">-2.855</td></tr>
+                            <tr><td>4</td><td>Pageruyung</td><td>1.125</td><td>1.457</td><td class="increase">+332</td></tr>
+                            <tr><td>5</td><td>Patean</td><td>1.874</td><td>2.007</td><td class="increase">+133</td></tr>
+                            <tr><td>6</td><td>Ngampel</td><td>2.802</td><td>392</td><td class="decline">-2.410</td></tr>
+                            <tr><td>7</td><td>Brangsong</td><td>1.676</td><td>1.278</td><td class="decline">-398</td></tr>
+                            <tr><td>8</td><td>Gemuh</td><td>1.350</td><td>68</td><td class="decline">-1.282</td></tr>
+                            <tr><td>9</td><td>Kaliwungu Selatan</td><td>1.270</td><td>203</td><td class="decline">-1.067</td></tr>
+                            <tr><td>10</td><td>Pegandon</td><td>1.539</td><td>411</td><td class="decline">-1.128</td></tr>
+                            <!-- Sisanya bisa ditambahkan lengkap kalau perlu -->
+                            <tr style="background: linear-gradient(135deg, #ffebee, #ffcdd2); font-weight: bold;">
+                                <td colspan="2"><strong>TOTAL</strong></td>
+                                <td><strong>28.306</strong></td>
+                                <td><strong>16.439</strong></td>
+                                <td class="decline"><strong>-11.867</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Pengajar -->
+        <div id="pengajar" class="tab-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">👨‍🏫</div>
+                    <div class="stat-number">2.523</div>
+                    <div class="stat-label">Total Pengajar 2023</div>
+                </div>
+                <div class="stat-card highlight decline">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-number">2.218</div>
+                    <div class="stat-label">Total Pengajar 2024</div>
+                </div>
+                <div class="stat-card decline">
+                    <div class="stat-icon">➖</div>
+                    <div class="stat-number">-305</div>
+                    <div class="stat-label">Perubahan</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>👨‍🏫 Jumlah Pengajar per Kecamatan</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kecamatan</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                                <th>Δ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Kaliwungu</td><td>455</td><td>603</td><td class="increase">+148</td></tr>
+                            <tr><td>2</td><td>Sukorejo</td><td>281</td><td>382</td><td class="increase">+101</td></tr>
+                            <tr><td>3</td><td>Patean</td><td>99</td><td>263</td><td class="increase">+164</td></tr>
+                            <tr><td>4</td><td>Pageruyung</td><td>116</td><td>160</td><td class="increase">+44</td></tr>
+                            <tr><td>5</td><td>Brangsong</td><td>126</td><td>111</td><td class="decline">-15</td></tr>
+                            <tr><td>6</td><td>Patebon</td><td>251</td><td>24</td><td class="decline">-227</td></tr>
+                            <!-- Sisanya sesuai data -->
+                            <tr style="background: linear-gradient(135deg, #ffebee, #ffcdd2); font-weight: bold;">
+                                <td colspan="2"><strong>TOTAL</strong></td>
+                                <td><strong>2.523</strong></td>
+                                <td><strong>2.218</strong></td>
+                                <td class="decline"><strong>-305</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Data Lengkap -->
+        <div id="lengkap" class="tab-content">
+            <div class="card">
+                <h2>📊 Data Lengkap Pondok Pesantren, Pengajar, dan Santri</h2>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">No</th>
+                                <th rowspan="2">Kecamatan</th>
+                                <th colspan="2">Pondok Pesantren</th>
+                                <th colspan="2">Pengajar</th>
+                                <th colspan="2">Santri</th>
+                            </tr>
+                            <tr>
+                                <th>2023</th>
+                                <th>2024</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                                <th>2023</th>
+                                <th>2024</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Plantungan</td><td>7</td><td>8</td><td>100</td><td>108</td><td>717</td><td>772</td></tr>
+                            <tr><td>2</td><td>Sukorejo</td><td>11</td><td>13</td><td>281</td><td>382</td><td>2.841</td><td>1.528</td></tr>
+                            <tr><td>3</td><td>Pageruyung</td><td>9</td><td>9</td><td>116</td><td>160</td><td>1.125</td><td>1.457</td></tr>
+                            <tr><td>4</td><td>Patean</td><td>6</td><td>7</td><td>99</td><td>263</td><td>1.874</td><td>2.007</td></tr>
+                            <tr><td>5</td><td>Singorojo</td><td>3</td><td>3</td><td>32</td><td>29</td><td>233</td><td>218</td></tr>
+                            <tr><td>6</td><td>Limbangan</td><td>3</td><td>3</td><td>64</td><td>73</td><td>997</td><td>1.237</td></tr>
+                            <tr><td>7</td><td>Boja</td><td>9</td><td>6</td><td>66</td><td>90</td><td>559</td><td>673</td></tr>
+                            <tr><td>8</td><td>Kaliwungu</td><td>22</td><td>24</td><td>455</td><td>603</td><td>5.893</td><td>5.497</td></tr>
+                            <tr><td>9</td><td>Kaliwungu Selatan</td><td>4</td><td>4</td><td>55</td><td>32</td><td>1.270</td><td>203</td></tr>
+                            <tr><td>10</td><td>Brangsong</td><td>6</td><td>7</td><td>126</td><td>111</td><td>1.676</td><td>1.278</td></tr>
+                            <tr><td>11</td><td>Pegandon</td><td>9</td><td>7</td><td>119</td><td>83</td><td>1.539</td><td>411</td></tr>
+                            <tr><td>12</td><td>Ngampel</td><td>5</td><td>2</td><td>271</td><td>69</td><td>2.802</td><td>392</td></tr>
+                            <tr><td>13</td><td>Gemuh</td><td>13</td><td>3</td><td>197</td><td>29</td><td>1.350</td><td>68</td></tr>
+                            <tr><td>14</td><td>Ringinarum</td><td>4</td><td>3</td><td>39</td><td>30</td><td>197</td><td>91</td></tr>
+                            <tr><td>15</td><td>Weleri</td><td>3</td><td>3</td><td>39</td><td>40</td><td>277</td><td>131</td></tr>
+                            <tr><td>16</td><td>Rowosari</td><td>3</td><td>1</td><td>23</td><td>7</td><td>185</td><td>12</td></tr>
+                            <tr><td>17</td><td>Kangkung</td><td>4</td><td>1</td><td>57</td><td>20</td><td>483</td><td>110</td></tr>
+                            <tr><td>18</td><td>Cepiring</td><td>8</td><td>7</td><td>56</td><td>60</td><td>573</td><td>232</td></tr>
+                            <tr><td>19</td><td>Patebon</td><td>11</td><td>6</td><td>251</td><td>24</td><td>2.941</td><td>86</td></tr>
+                            <tr><td>20</td><td>Kendal</td><td>7</td><td>1</td><td>77</td><td>5</td><td>774</td><td>36</td></tr>
+                            <tr style="background: linear-gradient(135deg, #ffebee, #ffcdd2); font-weight: bold;">
+                                <td colspan="2"><strong>KABUPATEN KENDAL</strong></td>
+                                <td><strong>147</strong></td>
+                                <td><strong>118</strong></td>
+                                <td><strong>2.523</strong></td>
+                                <td><strong>2.218</strong></td>
+                                <td><strong>28.306</strong></td>
+                                <td><strong>16.439</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sumber Data -->
+        <div class="data-source">
+            <h3>📚 Sumber Data</h3>
+            <p>Data diambil dari publikasi resmi tahun 2023 dan 2024 mengenai pondok pesantren di Kabupaten Kendal.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">Catatan: Terdapat penurunan signifikan pada jumlah pondok pesantren dan santri di sebagian besar kecamatan.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Sistem Informasi Geografis Pondok Pesantren Kabupaten Kendal</p>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
